@@ -1,0 +1,97 @@
+:root {
+  --primery-color: #db4c3f;
+  --secondery-color: #fafafa;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#container {
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template: 80px auto / minmax(320px, 18vw) 5fr;
+}
+
+/* for hiding elemeant  */
+
+.hide {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+}
+/*  */
+nav {
+  background-color: var(--primery-color);
+  grid-column: 1/3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clock {
+  font-size: 4rem;
+  color: #fff;
+}
+
+.projectbar {
+  background-color: var(--secondery-color);
+  padding: 7px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  
+  font-size: 2.7rem;
+}
+
+.addproject {
+  height: max-content;
+  border: none;
+  font-size: 2rem;
+}
+
+#projectContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 2rem;
+
+}
+
+/* project box  */
+.project {
+  
+}
+
+/* project form style   */
+
+#proForm {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: #db4c3f;
+
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+#proForm > button {
+  border: none;
+  width: 50%;
+}
+
+/*  */
+#taskContainer {
+}
