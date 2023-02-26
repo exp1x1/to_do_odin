@@ -1,13 +1,26 @@
-export let AllProjects = [];
+export const AllProjects = [];
 
 export const Project = (title) => {
-  let allTaskArray = [];
-  let obj = { title, allTaskArray };
+  const allTaskArray = [];
+  const obj = { title, allTaskArray };
   AllProjects.push(obj);
   return obj;
 };
 
-export const Task = (project, title, description, dueDate, priority, notes) => {
-  return { title, description, dueDate, priority, notes };
+export const Task = (
+  ProjectIndex,
+  title,
+  description,
+  dueDate,
+  priority
+) => {
+  const obj = {
+    title,
+    description,
+    dueDate,
+    priority,
+  };
+  AllProjects[ProjectIndex].allTaskArray.push(obj);
+  return obj;
 };
 

@@ -14,7 +14,7 @@ body {
   width: 100%;
 
   display: grid;
-  grid-template: 80px auto / minmax(320px, 18vw) 5fr;
+  grid-template: 80px auto / minmax(320px, 20vw) 5fr;
 }
 
 /* for hiding elemeant  */
@@ -29,31 +29,35 @@ nav {
   background-color: var(--primery-color);
   grid-column: 1/3;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 70px;
   align-items: center;
-  justify-content: center;
-}
-.clock {
+  justify-items: center;
   font-size: 4rem;
   color: #fff;
 }
+.clock {
+}
 
+#addTaskBtn {
+}
+
+/*  */
 .projectbar {
   background-color: var(--secondery-color);
   padding: 7px;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 18px;
-  
+
   font-size: 2.7rem;
 }
 
-.addproject {
-  height: max-content;
-  border: none;
-  font-size: 2rem;
+#addproject {
+  width: 45px;
+  cursor: pointer;
 }
 
 #projectContainer {
@@ -63,17 +67,36 @@ nav {
   align-items: center;
 
   font-size: 2rem;
-
 }
 
 /* project box  */
 .project {
-  
+  width: 100%;
+  padding: 7px;
+
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+
+  border-radius: 12px;
+}
+
+.project:hover {
+  background-color: lightgray;
+}
+
+.project:active {
+  background-color: #db4c3f;
+}
+/* for changing bacground fo selected */
+.selected {
+  background-color: #db4c3f;
 }
 
 /* project form style   */
 
-#proForm {
+#proForm,
+#taskForm {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -91,7 +114,102 @@ nav {
   border: none;
   width: 50%;
 }
+/*  */
+#taskForm {
+  display: flex;
+  flex-direction: column;
+}
 
+#taskForm > input {
+  width: 300px;
+  height: 22px;
+}
+
+#taskForm > textarea {
+  width: 300px;
+  height: 100px;
+}
+
+#taskForm > input[type="date"] {
+  width: auto;
+  padding: 7px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+#taskFormSelect {
+  padding: 4px;
+  background-color: #fff;
+}
+
+#taskForm > button {
+  border: none;
+  width: 50%;
+  height: 20px;
+  background-color: #fff;
+}
 /*  */
 #taskContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.taskcontainer {
+  width: max-content;
+
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 22px;
+}
+
+.task {
+  display: grid;
+  grid-template-columns: 450px 150px;
+  gap: 7px;
+  padding: 7px;
+  border: 4px solid #db4c3f;
+  border-radius: 10px;
+  white-space: pre-line;
+}
+
+.title {
+  /* background-color: aqua; */
+  padding: inherit;
+  background-color: lightgray;
+  border-radius: 5px;
+  font-size: 1.4rem;
+}
+
+.priority {
+  padding: inherit;
+  background-color: lightgray;
+  border-radius: 5px;
+  font-size: 1.4rem;
+}
+
+.description {
+  padding: inherit;
+  grid-column: 1/3;
+  max-height: 80px;
+  overflow-y: hidden;
+  overflow-y: scroll;
+  background-color: lightgray;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+.duedate {
+  width: max-content;
+  padding: inherit;
+  background-color: lightgray;
+  border-radius: 5px;
+  font-size: 1.4rem;
+}
+
+.editTaskBtn {
+  width: 38px;
+  justify-self: end;
 }
